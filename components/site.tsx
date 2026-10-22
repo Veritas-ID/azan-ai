@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { brand } from "@/lib/brand";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import {
@@ -16,23 +17,15 @@ import {
 import { motion, useReducedMotion } from "motion/react";
 export function Mark({ large = false }: { large?: boolean }) {
   return (
-    <img
-      className={large ? "mark large" : "mark"}
-      src="/brand/azan-symbol.webp"
-      width="620"
-      height="572"
-      alt=""
-    />
+    <img className={large ? "mark large" : "mark"} {...brand.icon} alt="" />
   );
 }
 export function Logo({ dark = false }: { dark?: boolean }) {
   return (
     <Link className="logo" href="/" aria-label="Azan AI home">
       <img
-        src={dark ? "/brand/azan-dark.webp" : "/brand/azan-light.webp"}
+        {...(dark ? brand.secondary : brand.primary)}
         alt="Azan AI — Connect, build, scale"
-        width="1000"
-        height="350"
       />
     </Link>
   );

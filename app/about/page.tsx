@@ -1,3 +1,4 @@
+import { brand } from "@/lib/brand";
 import { pageMetadata } from "@/lib/metadata";
 import { CTASection, SectionHeader } from "@/components/site";
 import { Process } from "@/components/process";
@@ -25,10 +26,8 @@ export default function About() {
         </div>
         <div className="about-symbol">
           <img
-            src="/brand/azan-symbol.webp"
+            {...brand.icon}
             alt="Azan AI’s A symbol with the African continent at its center"
-            width="620"
-            height="572"
           />
         </div>
       </section>

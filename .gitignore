@@ -6,3 +6,5 @@ out/
 .env*
 
 .next-production/
+
+.DS_Store

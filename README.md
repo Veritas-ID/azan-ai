@@ -8,7 +8,9 @@ Run `npm ci`, then `npm run dev`. Use `npm run build` for the production export 
 
 ## Brand assets
 
-`public/brand/` contains optimized derivatives of the supplied Azan AI logo files. The originals are unchanged. The light and dark logos are used on matching surfaces. The hero symbol and favicon are crops of the supplied light artwork.
+`public/brand/` preserves the supplied primary logo, secondary logo and standalone icon source files. The site uses tightly cropped, lossless WebP derivatives: the primary logo on light backgrounds, the secondary logo on dark backgrounds, and the standalone icon in the hero and About page. Asset references and intrinsic dimensions are centralized in `lib/brand.ts`.
+
+The favicon is derived directly from the standalone icon, centered on a transparent square with padding. `public/favicon.ico` includes 16, 32 and 48 pixel versions, with a 32 pixel PNG and 180 pixel Apple touch icon also declared in page metadata. The source artwork is unchanged.
 
 ## Contact form
 

@@ -1726,7 +1726,6 @@ img {
   min-height: 60vh;
 }
 .logo img {
-  aspect-ratio: 2.8;
   object-fit: contain;
 }
 .footer {
@@ -1739,9 +1738,6 @@ img {
 }
 .footer .logo {
   width: 190px;
-}
-.footer .logo img {
-  aspect-ratio: 2.86;
 }
 .footer p,
 .footer > div > a:not(.logo),
@@ -1763,9 +1759,6 @@ img {
 .footer .muted {
   font-size: 0.75rem;
   color: #8493a6;
-}
-.footer .logo img {
-  mix-blend-mode: lighten;
 }
 .footer .logo {
   display: inline-flex;
