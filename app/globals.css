@@ -2417,3 +2417,40 @@ img {
     }
   }
 }
+
+.form-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.form-honeypot {
+  display: none;
+}
+.contact-form .button {
+  gap: 9px;
+}
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+.contact-form .form-note a,
+.form-error a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form-status:focus {
+  outline: 2px solid #6a9a7d;
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .submission-spinner {
+    animation: submission-spin 1s linear infinite;
+  }
+  @keyframes submission-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

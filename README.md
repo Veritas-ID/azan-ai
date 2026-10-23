@@ -14,7 +14,13 @@ The favicon is derived directly from the standalone icon, centered on a transpar
 
 ## Contact form
 
-The form validates required fields, then opens an email draft to the supplied placeholder `hello@azanai.com`. It does **not** send messages or store enquiries. Its interface explicitly explains this behavior. Connect a verified form delivery service before enabling direct submission. The email address and social profiles need confirmation before a public launch; social placeholders are labeled as coming soon.
+The form submits directly to FormSubmit’s HTTPS AJAX endpoint for `hello@azanai.one`; visitors remain on the site. The recipient and canonical domain are defined in `lib/site.ts`. No email service credentials are exposed or required.
+
+**Activation is required:** click the “Activate Form” link in FormSubmit’s confirmation email sent to `hello@azanai.one`. The initial setup request returned an activation-required response, so actual inbox delivery must be confirmed after activation. Further submissions before activation can trigger additional confirmation emails. If activation is scoped to a hostname, activate the production form on `azanai.one` as well as any preview host used for real submissions.
+
+Submissions include the visitor’s name, reply-to email, organization, service, topic and message. A hidden honeypot complements the provider’s spam filtering. The form blocks duplicate submissions while sending, retains entries on failure, times out after 20 seconds, and confirms success only after the service explicitly accepts the request. It does not open a mail app. With JavaScript disabled, the native form submits to FormSubmit’s hosted flow.
+
+FormSubmit processes the submitted personal information; its privacy policy is linked beside the form. The site does not save enquiries in browser storage. Check the provider’s current policies and limits before a public launch. The social profile placeholders remain labeled as coming soon.
 
 ## Project visuals and content
 
@@ -22,4 +28,4 @@ Dukani, Veritas ID and WorkPal visuals are illustrative UI concepts, not screens
 
 ## Deployment
 
-`.openai/hosting.json` retains the existing Sites project ID. Publishing is owner-private unless the owner changes the audience. Set `metadataBase` and sitemap origins to the final canonical domain when a custom domain is connected.
+`.openai/hosting.json` retains the existing Sites project ID. Publishing is owner-private unless the owner changes the audience. Canonical metadata, robots and sitemap use `https://azanai.one`. The Sites preview remains separately hosted; custom-domain DNS must be configured with the domain’s hosting provider before `azanai.one` serves this site.

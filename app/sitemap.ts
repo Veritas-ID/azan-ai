@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteOrigin } from "@/lib/site";
 import { insights } from "@/lib/content";
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "insights/",
     ...insights.map((i) => `insights/${i.slug}/`),
   ].map((p) => ({
-    url: `https://azan-ai-studio.muledominicm.chatgpt.site/${p}`,
+    url: `${siteOrigin}/${p}`,
   }));
 }

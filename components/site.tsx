@@ -1,4 +1,5 @@
 "use client";
+import { contactEmail } from "@/lib/site";
 import Link from "next/link";
 import { brand } from "@/lib/brand";
 import { usePathname } from "next/navigation";
@@ -243,7 +244,7 @@ export function Footer() {
       <div className="footer-brand">
         <Logo dark />
         <p>Building, integrating and scaling AI from Africa.</p>
-        <a href="mailto:hello@azanai.com">hello@azanai.com</a>
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </div>
       <div>
         <h3>Company</h3>

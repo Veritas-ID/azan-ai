@@ -1,3 +1,4 @@
+import { contactEmail } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 import { Mail } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
@@ -20,9 +21,9 @@ export default function Contact() {
           Bring us a question, a challenge or an idea. We’ll start by
           understanding what you need and where AI could help.
         </p>
-        <a className="contact-email" href="mailto:hello@azanai.com">
+        <a className="contact-email" href={`mailto:${contactEmail}`}>
           <Mail size={20} />
-          hello@azanai.com
+          {contactEmail}
         </a>
         <div className="contact-aside">
           <h3>Exploring your first use case?</h3>

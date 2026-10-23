@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-export const siteOrigin = "https://azan-ai-studio.muledominicm.chatgpt.site";
+export { siteOrigin } from "@/lib/site";
 export function pageMetadata(
   title: string,
   description: string,
