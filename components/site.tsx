@@ -1,5 +1,5 @@
 "use client";
-import { contactEmail } from "@/lib/site";
+import { contactEmail, labsOrigin } from "@/lib/site";
 import Link from "next/link";
 import { brand } from "@/lib/brand";
 import { usePathname } from "next/navigation";
@@ -253,6 +253,7 @@ export function Footer() {
             {n}
           </Link>
         ))}
+        <a href={labsOrigin}>Labs</a>
       </div>
       <div>
         <h3>Services</h3>
