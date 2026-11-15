@@ -18,7 +18,34 @@ export type Experiment = {
  * Add real entries only. While this is empty the page shows an honest
  * "nothing public yet" state.
  */
-export const experiments: Experiment[] = [];
+export const experiments: Experiment[] = [
+  {
+    id: "dukani",
+    name: "Dukani",
+    status: "Prototype",
+    summary:
+      "Can an AI agent that lives entirely inside WhatsApp hold a useful conversation with customers? A working prototype pairs a LLaMA 3 model with live web search and a per-user memory of preferences.",
+    tags: ["WhatsApp", "AI agents", "Search grounding", "Conversational memory"],
+  },
+  {
+    id: "veritas-id",
+    name: "Veritas ID",
+    status: "Prototype",
+    summary:
+      "Can information stay connected to its origin and context as it is reused? A prototype working with World Bank Data360 indicators explores provenance and verification.",
+    tags: ["Provenance", "Trusted data", "LLMs"],
+    url: "https://veritasid.one",
+  },
+  {
+    id: "workpal",
+    name: "WorkPal",
+    status: "Exploring",
+    summary:
+      "What does an AI coworker need to work safely inside an organization? We are exploring agents with a defined role, identity, set of tools and clear permission limits.",
+    tags: ["AI coworkers", "Agent permissions", "Tool use"],
+    url: "https://workpal.one",
+  },
+];
 
 export const statuses: { name: ExperimentStatus; meaning: string }[] = [
   { name: "Exploring", meaning: "A question we are testing." },

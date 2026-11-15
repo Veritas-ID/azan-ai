@@ -32,7 +32,7 @@ Dukani, Veritas ID and WorkPal visuals are illustrative UI concepts, not screens
 
 Run it with `cd labs`, `npm ci`, then `npm run dev` (port 3001). It is a standard Next.js build, not a static export, so server routes can be added for interactive demos later.
 
-Experiments are listed from `labs/lib/experiments.ts`. The list starts empty and the page shows a “nothing public yet” state until real entries are added. Focus areas restate themes from the main site’s services and projects; they are not claims about specific experiments. The Labs contact buttons link to the main site’s contact page.
+Experiments are listed from `labs/lib/experiments.ts`. Add real entries only, each with an honest status label. If the list is ever empty, the page shows a “nothing public yet” state. Focus areas restate themes from the main site’s services and projects; they are not claims about specific experiments. The Labs contact buttons link to the main site’s contact page.
 
 To deploy on Vercel:
 
