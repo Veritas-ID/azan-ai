@@ -26,6 +26,23 @@ FormSubmit processes the submitted personal information; its privacy policy is l
 
 Dukani, Veritas ID and WorkPal visuals are illustrative UI concepts, not screenshots or evidence of project results. Descriptions follow the supplied brief. Insights are original introductory guides, without invented dates, authors, statistics or client claims. YAHfrika links to the supplied website.
 
+## Labs (labs.azanai.one)
+
+`labs/` is a separate Next.js app for Azan AI Labs, with its own `package.json` and lockfile. It is not part of the main site’s build: the root `tsconfig.json` excludes it, and the main site only links to it from the footer through `labsOrigin` in `lib/site.ts`.
+
+Run it with `cd labs`, `npm ci`, then `npm run dev` (port 3001). It is a standard Next.js build, not a static export, so server routes can be added for interactive demos later.
+
+Experiments are listed from `labs/lib/experiments.ts`. The list starts empty and the page shows a “nothing public yet” state until real entries are added. Focus areas restate themes from the main site’s services and projects; they are not claims about specific experiments. The Labs contact buttons link to the main site’s contact page.
+
+To deploy on Vercel:
+
+1. Create a second Vercel project from this same repository and set its **Root Directory** to `labs`. The framework preset is Next.js with default build settings.
+2. In that project’s **Domains**, add `labs.azanai.one`.
+3. At the DNS provider for `azanai.one`, add the record Vercel shows for the subdomain, normally a `CNAME` for `labs`. If the domain already uses Vercel’s nameservers, Vercel adds it for you.
+4. Optionally enable Vercel’s setting to skip deployments when nothing in the Root Directory changed, so Labs and the main site do not rebuild for each other’s commits.
+
+The footer link to Labs on the main site will not resolve until steps 2 and 3 are complete.
+
 ## Deployment
 
 `.openai/hosting.json` retains the existing Sites project ID. Publishing is owner-private unless the owner changes the audience. Canonical metadata, robots and sitemap use `https://azanai.one`. The Sites preview remains separately hosted; custom-domain DNS must be configured with the domain’s hosting provider before `azanai.one` serves this site.
