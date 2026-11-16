@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "labs",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "labs", "run", "dev"],
+      "port": 3001
+    },
+    {
+      "name": "main-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    }
+  ]
+}
