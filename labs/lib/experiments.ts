@@ -54,7 +54,7 @@ export const statuses: { name: ExperimentStatus; meaning: string }[] = [
   { name: "Retired", meaning: "Finished or set aside, with what we learned." },
 ];
 
-/** Themes drawn from the work described on azanai.one. */
+/** Themes drawn from the work described on azanai.org. */
 export const focusAreas = [
   {
     name: "Agents in messaging",

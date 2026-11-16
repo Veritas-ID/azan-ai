@@ -15,7 +15,7 @@ export default function NotFound() {
           Back to Labs
         </a>
         <a className="button secondary" href={mainOrigin}>
-          Visit azanai.one
+          Visit azanai.org
         </a>
       </div>
     </section>

@@ -72,7 +72,7 @@ export default function RootLayout({
                 How Labs works
               </a>
               <a className="nav-out" href={mainOrigin}>
-                azanai.one <ArrowUpRight size={15} aria-hidden="true" />
+                azanai.org <ArrowUpRight size={15} aria-hidden="true" />
               </a>
             </nav>
           </div>
@@ -85,7 +85,7 @@ export default function RootLayout({
               <p>Experiments in applied AI from Azan AI.</p>
             </div>
             <nav aria-label="Azan AI" className="footer-links">
-              <a href={mainOrigin}>azanai.one</a>
+              <a href={mainOrigin}>azanai.org</a>
               <a href={`${mainOrigin}/services/`}>Services</a>
               <a href={`${mainOrigin}/projects/`}>Projects</a>
               <a href={contactUrl}>Contact</a>
