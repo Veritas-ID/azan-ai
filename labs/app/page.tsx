@@ -47,7 +47,7 @@ export default function Home() {
         <div className="bench" aria-labelledby="bench-title">
           <div className="bench-bar">
             <span id="bench-title">How to read a label</span>
-            <span>labs.azanai.one</span>
+            <span>labs.azanai.org</span>
           </div>
           <dl>
             {statuses.map((s) => (
@@ -155,7 +155,7 @@ export default function Home() {
               Talk to Azan AI
             </a>
             <a className="button secondary" href={mainOrigin}>
-              Visit azanai.one
+              Visit azanai.org
             </a>
           </div>
         </div>

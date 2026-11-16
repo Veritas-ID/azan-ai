@@ -16,7 +16,7 @@ The favicon is derived directly from the standalone icon, centered on a transpar
 
 The form submits directly to FormSubmit’s HTTPS AJAX endpoint for `hello@azanai.one`; visitors remain on the site. The recipient and canonical domain are defined in `lib/site.ts`. No email service credentials are exposed or required.
 
-**Activation is required:** click the “Activate Form” link in FormSubmit’s confirmation email sent to `hello@azanai.one`. The initial setup request returned an activation-required response, so actual inbox delivery must be confirmed after activation. Further submissions before activation can trigger additional confirmation emails. If activation is scoped to a hostname, activate the production form on `azanai.one` as well as any preview host used for real submissions.
+**Activation is required:** click the “Activate Form” link in FormSubmit’s confirmation email sent to `hello@azanai.one`. The initial setup request returned an activation-required response, so actual inbox delivery must be confirmed after activation. Further submissions before activation can trigger additional confirmation emails. If activation is scoped to a hostname, activate the production form on `www.azanai.org` as well as any preview host used for real submissions.
 
 Submissions include the visitor’s name, reply-to email, organization, service, topic and message. A hidden honeypot complements the provider’s spam filtering. The form blocks duplicate submissions while sending, retains entries on failure, times out after 20 seconds, and confirms success only after the service explicitly accepts the request. It does not open a mail app. With JavaScript disabled, the native form submits to FormSubmit’s hosted flow.
 
@@ -26,7 +26,7 @@ FormSubmit processes the submitted personal information; its privacy policy is l
 
 Dukani, Veritas ID and WorkPal visuals are illustrative UI concepts, not screenshots or evidence of project results. Descriptions follow the supplied brief. Insights are original introductory guides, without invented dates, authors, statistics or client claims. YAHfrika links to the supplied website.
 
-## Labs (labs.azanai.one)
+## Labs (labs.azanai.org)
 
 `labs/` is a separate Next.js app for Azan AI Labs, with its own `package.json` and lockfile. It is not part of the main site’s build: the root `tsconfig.json` excludes it, and the main site only links to it from the footer through `labsOrigin` in `lib/site.ts`.
 
@@ -37,12 +37,12 @@ Experiments are listed from `labs/lib/experiments.ts`. Add real entries only, ea
 To deploy on Vercel:
 
 1. Create a second Vercel project from this same repository and set its **Root Directory** to `labs`. The framework preset is Next.js with default build settings.
-2. In that project’s **Domains**, add `labs.azanai.one`.
-3. At the DNS provider for `azanai.one`, add the record Vercel shows for the subdomain, normally a `CNAME` for `labs`. If the domain already uses Vercel’s nameservers, Vercel adds it for you.
+2. In that project’s **Domains**, add `labs.azanai.org`.
+3. At the DNS provider for `azanai.org`, add the record Vercel shows for the subdomain, normally a `CNAME` for `labs`. If the domain already uses Vercel’s nameservers, Vercel adds it for you.
 4. Optionally enable Vercel’s setting to skip deployments when nothing in the Root Directory changed, so Labs and the main site do not rebuild for each other’s commits.
 
 The footer link to Labs on the main site will not resolve until steps 2 and 3 are complete.
 
 ## Deployment
 
-`.openai/hosting.json` retains the existing Sites project ID. Publishing is owner-private unless the owner changes the audience. Canonical metadata, robots and sitemap use `https://azanai.one`. The Sites preview remains separately hosted; custom-domain DNS must be configured with the domain’s hosting provider before `azanai.one` serves this site.
+`.openai/hosting.json` retains the existing Sites project ID. Publishing is owner-private unless the owner changes the audience. Canonical metadata, robots and sitemap use `https://www.azanai.org`, the production domain on Vercel. `azanai.one`, `www.azanai.one` and `azanai.org` redirect to it.
